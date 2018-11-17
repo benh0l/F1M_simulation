@@ -19,15 +19,16 @@ public class Fenetre extends JFrame {
         sc = new SimulationChampionnat(new ArrayList<Track>(),new ArrayList<Pilot>());
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.getContentPane().setBackground(new Color(65, 58, 58));
 
         //CHOIX FICHIER
         JButton fichier = new JButton("Sélectionner un fichier");
         fichier.setSize(new Dimension(200, 50));
-        fichier.setBounds(275, 50, 200, 50);
+        fichier.setBounds(545, 25, 200, 50);
         JTextField status = new JTextField("");
         status.setEditable(false);
         status.setSize(new Dimension(250, 50));
-        status.setBounds(15, 50, 250, 50);
+        status.setBounds(15, 25, 500, 50);
         fichier.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,7 +43,7 @@ public class Fenetre extends JFrame {
 
         JButton simuler = new JButton("Simuler");
         simuler.setSize(new Dimension(200,50));
-        simuler.setBounds(500,50,200,50);
+        simuler.setBounds(775,25,200,50);
         simuler.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

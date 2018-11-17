@@ -25,7 +25,7 @@ public class Panneau extends JPanel implements Observer{
         super();
         o.addObserver(this);
         this.setSize(800,500);
-        this.setBackground(Color.BLACK);
+        this.setBackground(new Color(40, 40, 40));
         policeF1 = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream(policeRegularPath)).deriveFont(12f);
         tabPoint = null;
         //tabTotal = null;
@@ -56,12 +56,13 @@ public class Panneau extends JPanel implements Observer{
 
             //DRAW POINTS
             for(int i = 0; i<tabPoint[0].length;i++){
-                //DRAW PILOT NAME
+                //DRAW PILOT NAME & POSITION
                 if(pilots!=null) {
+                    g.drawString(Integer.toString(i+1),2,38+i*25+12);
                     g.setColor(pilots.get(i).getColor());
-                    g.fillRect(2,38+i*25,5,12);
+                    g.fillRect(25,38+i*25,5,12);
                     g.setColor(Color.WHITE);
-                    g.drawString(pilots.get(i).getName(), 10, 50 + i * 25);
+                    g.drawString(pilots.get(i).getName(), 32, 50 + i * 25);
                 }
                 for(int j = 0;j<tabPoint.length;j++){
                     //g.drawString(Integer.toString(tabPoint[j][i]),150+j*50,50+i*25);
