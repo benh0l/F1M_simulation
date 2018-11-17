@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Fenetre extends JFrame {
 
@@ -104,24 +105,12 @@ public class Fenetre extends JFrame {
 
         int[][] tabPoints = sc.indiceToPoints();
 
-        //test affichage
-        /*
-        int tabTotalPts[] = new int[tabPoints[0].length];
-        for(int j = 0;j< tabPoints[0].length;j++){
-            System.out.print(pilots.get(j).getName()+"        |");
-            for(int i = 0;i<tabPoints.length;i++){
-                System.out.print(tabPoints[i][j]+"   ");
-                tabTotalPts[j] += tabPoints[i][j];
+        pilots.sort(new Comparator<Pilot>() {
+            @Override
+            public int compare(Pilot p1, Pilot p2) {
+                return (p2.getPoints() - p1.getPoints());
             }
-            System.out.println("\n");
-        }
-
-        System.out.println("------------------------------------------------------------------------------");
-        for(int h = 0;h<tabTotalPts.length;h++){
-            System.out.print(tabTotalPts[h]+"   ");
-        }
-        */
-        //
+        });
     }
 
 

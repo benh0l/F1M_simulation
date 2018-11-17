@@ -66,8 +66,8 @@ public class DataLoader {
     public ArrayList<Pilot> loadPilot() throws IOException {
         File f = new File(file);
         Sheet sheet = SpreadSheet.createFromFile(f).getSheet(2);
-
         ArrayList<Pilot> pilots = new ArrayList<>();
+        int indice = 0;
 
         for(int i = 3; i<23; i++){
             String name = sheet.getCellAt(new String("B"+i)).getTextValue();
@@ -78,9 +78,11 @@ public class DataLoader {
                 String overtake = sheet.getCellAt(new String("F"+i)).getTextValue();
                 String strategy = sheet.getCellAt(new String("G"+i)).getTextValue();
                 String team = sheet.getCellAt(new String("H"+i)).getTextValue();
-                Pilot p = new Pilot(name,Integer.parseInt(braking),Integer.parseInt(talent),Integer.parseInt(luck),Integer.parseInt(overtake),Integer.parseInt(strategy),team);
+                Pilot p = new Pilot(name,Integer.parseInt(braking),Integer.parseInt(talent),Integer.parseInt(luck),Integer.parseInt(overtake),Integer.parseInt(strategy),team,indice);
                 pilots.add(p);
+                indice++;
             }
+
         }
         return pilots;
     }

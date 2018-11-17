@@ -73,33 +73,53 @@ public class SimulationChampionnat extends Observable {
                 switch (tabPos[i][j]){
                     case 10:
                         tabRes[i][j] = 25;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 25);
+                        pilots.get(j).tabPoints[i] = 25;
                         break;
                     case 9:
                         tabRes[i][j] = 18;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 18);
+                        pilots.get(j).tabPoints[i] = 18;
                         break;
                     case 8:
                         tabRes[i][j] = 15;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 15);
+                        pilots.get(j).tabPoints[i] = 15;
                         break;
                     case 7:
                         tabRes[i][j] = 12;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 12);
+                        pilots.get(j).tabPoints[i] = 12;
                         break;
                     case 6:
                         tabRes[i][j] = 10;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 10);
+                        pilots.get(j).tabPoints[i] = 10;
                         break;
                     case 5:
                         tabRes[i][j] = 8;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 8);
+                        pilots.get(j).tabPoints[i] = 8;
                         break;
                     case 4:
                         tabRes[i][j] = 6;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 6);
+                        pilots.get(j).tabPoints[i] = 6;
                         break;
                     case 3:
                         tabRes[i][j] = 4;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 4);
+                        pilots.get(j).tabPoints[i] = 4;
                         break;
                     case 2:
                         tabRes[i][j] = 2;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 2);
+                        pilots.get(j).tabPoints[i] = 2;
                         break;
                     case 1:
                         tabRes[i][j] = 1;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 1);
+                        pilots.get(j).tabPoints[i] = 1;
                         break;
                         default:
                             tabRes[i][j] = 0;
