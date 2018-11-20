@@ -65,9 +65,16 @@ public class Panneau extends JPanel implements Observer{
                     g.drawString(pilots.get(i).getName(), 32, 50 + i * 25);
                 }
                 for(int j = 0;j<tabPoint.length;j++){
-                    //g.drawString(Integer.toString(tabPoint[j][i]),150+j*50,50+i*25);
-                    g.drawString(Integer.toString(pilots.get(i).tabPoints[j]),150+j*50,50+i*25);
-                    //pilots.get(i).setPoints(pilots.get(i).getPoints() + tabPoint[j][i]);
+                    if(pilots.get(i).tabPoints[j] == -10){
+                        g.setColor(Color.RED);
+                        g.drawString("DNF",150+j*50,50+i*25);
+                        g.setColor(Color.WHITE);
+                    }else{
+                        //g.drawString(Integer.toString(tabPoint[j][i]),150+j*50,50+i*25);
+                        g.setColor(Color.WHITE);
+                        g.drawString(Integer.toString(pilots.get(i).tabPoints[j]),150+j*50,50+i*25);
+                        //pilots.get(i).setPoints(pilots.get(i).getPoints() + tabPoint[j][i]);
+                    }
                 }
             }
 

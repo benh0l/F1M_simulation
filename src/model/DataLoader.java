@@ -22,7 +22,7 @@ public class DataLoader {
         ArrayList<Track> tracks = new ArrayList<>();
         Track[] tabTrack = new Track[15];
 
-        for(int i = 3; i<16; i++){
+        for(int i = 3; i<25; i++){
             String num = sheet.getCellAt(new String("A"+i)).getTextValue();
             if(!num.equals("")){
                 String name = sheet.getCellAt(new String("B"+i)).getTextValue();

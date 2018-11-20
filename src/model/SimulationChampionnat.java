@@ -36,7 +36,7 @@ public class SimulationChampionnat extends Observable {
         this.tab = tabRes;
         setChanged();
         notifyObservers();
-        System.out.println("NOTIFY");
+        //System.out.println("NOTIFY");
         return tabRes;
     }
 
@@ -53,6 +53,8 @@ public class SimulationChampionnat extends Observable {
                         max = tab[i][j];
                         indiceMax = j;
                         //System.out.print(indiceMax+"  ");
+                    }else if(tab[i][j] == -10){
+                        tabRes[i][j] = -10;
                     }
                 }
                 //System.out.println("\n");
@@ -121,9 +123,15 @@ public class SimulationChampionnat extends Observable {
                         pilots.get(j).setPoints( pilots.get(j).getPoints() + 1);
                         pilots.get(j).tabPoints[i] = 1;
                         break;
+                    case -10:
+                        tabRes[i][j] = -10;
+                        pilots.get(j).setPoints( pilots.get(j).getPoints() + 0);
+                        pilots.get(j).tabPoints[i] = -10;
+                        break;
                         default:
                             tabRes[i][j] = 0;
                             break;
+
                 }
             }
         }
